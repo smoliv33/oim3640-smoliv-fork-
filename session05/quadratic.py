@@ -2,7 +2,7 @@ import math
 
 
 def solve_quadratic(a, b, c):
-    """Simple version of quadratic equation solver 
+    """Simple version of quadratic equation solver
     a: float
     b: float
     c: float
@@ -41,18 +41,21 @@ def solve_quadratic(a, b, c):
 
 
 
+
 def solve_quadratic(a, b, c):
-    """Solve quadratic function and return two roots.
-    a*x^2 + b*x + c = 0
+    """
+    Solve a quadratic equation, a*x^2 + b*x + c = 0 and return two roots if they exist.
 
     a: float
     b: float
     c: float
 
-    Return None if there is no real number solution"""
+    Return None if there is no real number solution.
+    """
     if a == 0 and b == 0:
-        print('Hey, this is not a quadratic equation!')
-        return None
+        # print('Hey, this is not a quadratic equation!')
+        # return None
+        raise ValueError("This is not an equation.")
     if a == 0:
         print('This is a linear function.')
         return -c / b
@@ -60,11 +63,10 @@ def solve_quadratic(a, b, c):
     discriminant = b**2 - 4 * a * c  # calculate the discriminant
 
     if discriminant >= 0:  # equation has solutions
-        x_1 = (-b + math.sqrt(discriminant)) / 2 * a
-        x_2 = (-b - math.sqrt(discriminant)) / 2 * a
+        x_1 = (-b + math.sqrt(discriminant)) / (2 * a)
+        x_2 = (-b - math.sqrt(discriminant)) / (2 * a)
         return x_1, x_2
     else:
-        # raise Exception('No real number solution.')
         print('No real number solution.')
         return None
         # raise ValueError('No real number solution!')
@@ -74,20 +76,23 @@ def main():
     print(solve_quadratic(2, 2, 2))
     print(solve_quadratic(1, 4, 1))
 
-    a = float(input('please enter a number:'))
-    b = float(input('please enter a number:'))
-    c = float(input('please enter a number:'))
+    try:
+        a = float(input('Enter the coefficient of x^2: '))
+        b = float(input('Enter the coefficient of x: '))
+        c = float(input('Enter the constant term: '))
 
-    result = solve_quadratic(a, b, c)
+        result = solve_quadratic(a, b, c)
 
-    if result is not None:
-        if isinstance(result, float):
-            print(f'The solution is {result}.')
+        if result is not None:
+            if isinstance(result, float):
+                print(f'The solution is {result:.2f}.')
+            else:
+                root_1, root_2 = result
+                print(f'Two roots are {root_1:.2f} and {root_2:.2f}.')
         else:
-            root_1, root_2 = result
-            print(f'Two roots are {root_1:.2f} and {root_2:.2f}.')
-    else:
-        print('Sorry 😎')
+            print('Sorry 😎. No real number solution.')
+    except ValueError:
+        print('Invalid input. Please enter valid numeric coefficients.')
 
 
 if __name__ == "__main__":
