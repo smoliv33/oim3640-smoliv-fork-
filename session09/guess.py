@@ -1,5 +1,8 @@
 def guess():
-    """"""
-    
+    """
+    The classic Guess the Number game
+    """
 
-guess()
+
+if __name__ == '__main__':
+    guess()
