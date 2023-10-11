@@ -46,9 +46,9 @@ def has_no_e(word):
     return 'e' not in word.lower()
 
 
-print(has_no_e('Babson'))
-print(has_no_e('College'))
-print(has_no_e('EA sports'))
+# print(has_no_e('Babson'))
+# print(has_no_e('College'))
+# print(has_no_e('EA sports'))
 
 
 def find_words_no_e():
