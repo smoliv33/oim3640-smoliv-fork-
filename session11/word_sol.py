@@ -38,10 +38,12 @@ def has_no_e(word):
     """
     returns True if the given word doesn't have the letter "e" in it
     """
-    for letter in word:
-        if letter == "e" or letter == "E":
-            return False
-    return True
+    # for letter in word:
+    #     if letter == "e" or letter == "E":
+    #         return False
+    # return True
+
+    return 'e' not in word.lower()
 
 
 # print(has_no_e('Babson'))
@@ -233,7 +235,7 @@ def is_abecedarian_using_while(word):
     """
     i = 0
     while i < len(word) - 1:
-        if word[i + 1] < word[i:]:
+        if word[i + 1] < word[i]:
             return False
         i = i + 1
     return True
@@ -243,6 +245,7 @@ def is_abecedarian_using_while(word):
 
 
 def main():
+    """"""
     find_long_words()
 
 
