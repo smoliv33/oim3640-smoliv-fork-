@@ -13,9 +13,9 @@ def spell_bee(required, available):
 
 
 def main():
-    required_letter = ""
-    available_letters = ""
-    spell_bee(required=required_letter, available=available_letters)
+    centered_letter = "e"
+    available_letters = "otblci"
+    spell_bee(required=centered_letter, available=available_letters + centered_letter)
 
 
 if __name__ == "__main__":
